@@ -18,12 +18,10 @@ if (contactForm) {
             return;
         }
         
-        // In a real implementation, you would send this data to a server
         fetch('https://formsubmit.co/ajax/biluyb338@gmail.com', {
             method: 'POST',
             body: formData
           })
-        // For now, we'll just log it and show a success message
         console.log('Form submitted:', { name, email, subject, message });
         
         // Show success message

@@ -70,13 +70,11 @@ backToTopBtn.addEventListener('click', (e) => {
     });
 });
 
-// Set current year in footer
 currentYear.textContent = new Date().getFullYear();
 
 // Project Filtering
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         button.classList.add('active');
@@ -121,8 +119,6 @@ function animateSkillBars() {
 // Call skill bars animation when page loads
 window.addEventListener('load', animateSkillBars);
 
-// In your animations.js
-// In your animations.js
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-bar');
     
