@@ -44,18 +44,28 @@ hamburger.addEventListener('click', () => {
 });
 
 // Visitor Counter
-function updateVisitorCount() {
-    fetch('https://api.countapi.xyz/update/bililign-portfolio/visits?amount=1')
-        .then(response => response.json())
-        .then(data => {
-            const correctedCount = Math.floor(data.value / 2) + 20;
-            document.getElementById('visitCount').textContent = correctedCount.toLocaleString();
-        })
-        .catch(error => {
-            document.getElementById('visitCount').textContent = "20+";
-        });
-}
-
+async function updateVisitorCount() {
+    const countEl = document.getElementById('visitCount');
+    
+    try {
+      // First try CountAPI
+      const response = await fetch('https://api.countapi.xyz/hit/your-domain.com/visits');
+      const data = await response.json();
+      countEl.textContent = data.value.toLocaleString();
+    } catch (error) {
+      // Fallback to localStorage
+      let count = localStorage.getItem('visitorCount') || 0;
+      count = parseInt(count) + 1;
+      countEl.textContent = count.toLocaleString();
+      localStorage.setItem('visitorCount', count);
+    }
+    
+    // Add animation
+    countEl.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+      countEl.style.transform = 'scale(1)';
+    }, 300);
+  }
 
 // Close mobile menu when clicking a link
 navLinks.forEach(link => {
