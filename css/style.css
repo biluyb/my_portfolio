@@ -321,6 +321,7 @@ ul {
 }
 
 .hero-text {
+  padding-top: 40px;
   flex: 1;
 }
 
