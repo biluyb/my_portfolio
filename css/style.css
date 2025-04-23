@@ -632,12 +632,15 @@ ul {
 
 .project-tech {
   display: flex;
+  align-items: center;
+
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .project-tech span {
   background-color: var(--primary-color);
+
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
   font-size: 0.75rem;
