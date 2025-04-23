@@ -377,6 +377,7 @@ ul {
 
 .tech-icons {
   position: absolute;
+  margin: 0 22px 22px 0;
   bottom: -1.5rem;
   right: -1.5rem;
   background-color: var(--bg-color);
@@ -437,14 +438,15 @@ ul {
 
 .detail-item span {
   display: block;
-  font-weight: 600;
+  
   color: var(--dark-color);
   margin-bottom: 0.25rem;
 }
 
 .detail-item p {
   margin-bottom: 0;
-  color: var(--text-light);
+  font-weight: 600;
+  color: black;
 }
 
 .about-cta {
@@ -635,12 +637,12 @@ ul {
 }
 
 .project-tech span {
-  background-color: #e2e8f0;
+  background-color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--dark-color);
+  color: white;
 }
 
 .section-footer {
@@ -711,7 +713,7 @@ ul {
   align-items: center;
   gap: 0.5rem;
   background-color: rgba(37, 99, 235, 0.1);
-  color: var(--primary-color);
+  color: dark;
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
   font-size: 0.875rem;
