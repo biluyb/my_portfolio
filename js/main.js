@@ -43,6 +43,25 @@ hamburger.addEventListener('click', () => {
     navLinksContainer.classList.toggle('active');
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.querySelector('.resume-button');
+  if (button) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open('assets/pdfs/resume.pdf', '_blank'); // Replace with actual path
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'resume_view', {
+          'event_category': 'engagement',
+          'event_label': 'Resume View'
+        });
+      }
+
+      console.log('Resume viewed');
+    });
+  }
+});
+
 // Visitor Counter
 async function updateVisitorCount() {
     const countEl = document.getElementById('visitCount');
