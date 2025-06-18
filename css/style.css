@@ -637,7 +637,7 @@ ul {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
 }
 
-/* Decorative element */
+/* Decorative element
 .resume-card::after {
   content: "";
   position: absolute;
@@ -648,7 +648,21 @@ ul {
   background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0) 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
+} */
+
+.resume-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* ← Add this line */
 }
+
 
 .resume-card:hover::after {
   opacity: 1;
